@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../Style/Navbar.css";
-import Hamburger from "../assets/Hamburger.jpg";
+import Hamburger from "../assets/Hamburger.png";
 import LOGO from "../assets/LOGO.png";
 import DefaultUser from "../assets/Default-User.webp";
 import { Link, useNavigate } from "react-router-dom";
