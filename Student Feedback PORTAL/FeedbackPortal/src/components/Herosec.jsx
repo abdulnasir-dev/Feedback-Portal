@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Herosec({ name }) {
   console.log("🚀 DEPLOYED API URL =", import.meta.env.VITE_API_URL);
+
   const today = new Date();
   const formattedDate = today.toLocaleDateString("en-GB", {
     day: "numeric",
@@ -26,8 +27,9 @@ export default function Herosec({ name }) {
       try {
         const res = await api.get("/courses");
 
-        // FIXED: backend returns array, not { courses: [] }
+        // ✅ Backend now returns a pure array
         setCourses(res.data);
+
       } catch (err) {
         console.log("Error loading courses:", err);
       }
@@ -48,7 +50,7 @@ export default function Herosec({ name }) {
         <div className="hero-overlay">
           <p className="hp1">{formattedDate}</p>
           <h1>
-            Welcome back!<span className="uname"> {name}</span> 👋
+            Welcome back! <span className="uname">{name}</span> 👋
           </h1>
           <p className="hp22">
             Stay updated with your courses and upcoming events
@@ -60,6 +62,7 @@ export default function Herosec({ name }) {
       <div className="main-content">
         {/* LEFT CONTENT */}
         <div className="left-content">
+
           {/* COURSES */}
           <div className="section-box">
             <h2>📘 Courses ››</h2>
