@@ -1,0 +1,12 @@
+/* RESET MARGINS & BACKGROUND */
+html, body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #360538, #1b263b); /* cool gradient background */
+    overflow-x: hidden;
+}
+
+/* Ensure no container shows white background */
+#root, .App {
+    background: linear-gradient(135deg, #2f0034, #1b263b); /* cool gradient background */
+}

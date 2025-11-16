@@ -1,0 +1,233 @@
+/* Navbar base */
+.navbar {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(20, 20, 20, 0.94);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: 12px;
+}
+
+/* Logo area */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Hamburger (visible on mobile) */
+.humb-image {
+  height: 30px;
+  width: 35px;
+  cursor: pointer;
+  display: none; /* shown on small screens via media query */
+  object-fit: cover;
+}
+
+/* Main navigation links */
+.navElements {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding-left: 10px;
+}
+
+.navElements a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.15s ease;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.navElements a:hover {
+  color: #ff5e62;
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.02);
+}
+
+/* Account area */
+.acc {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.account-image {
+  height: 45px;
+  width: 45px;
+  padding: 2px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+/* name / small meta */
+.acc-s p {
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1;
+  text-align: left;
+}
+
+/* Buttons */
+.login-btn,
+.logout-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.login-btn:hover,
+.logout-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* Sidebar (off-canvas) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 250px;
+  height: 100vh;
+  background: rgba(24, 24, 37, 0.96);
+  backdrop-filter: blur(12px);
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  transition: left 0.35s ease;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+/* Sidebar header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-logo {
+  height: 40px;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.close-btn:hover {
+  transform: scale(1.05);
+  color: #ff5e62;
+}
+
+/* Sidebar links area */
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+  padding-left: 20px;
+  gap: 8px;
+}
+
+.sidebar-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 6px;
+  font-size: 16px;
+  transition: color 0.2s, transform 0.12s;
+  border-radius: 6px;
+}
+
+.sidebar-links a:hover {
+  color: #ff5e62;
+  transform: translateX(6px);
+}
+
+/* Backdrop behind sidebar */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(2px);
+  z-index: 1500;
+}
+
+/* Small tweaks for header text (two-line) */
+.acc-s p:first-child { font-weight: 700; }
+.acc-s p:last-child { font-size: 12px; opacity: 0.9; }
+
+/* ===== Responsive behaviour ===== */
+@media (max-width: 900px) {
+  .navElements {
+    display: none; /* hide the full nav on smaller screens */
+  }
+
+  .humb-image {
+    display: block;
+  }
+
+  .logo-image { height: 44px; }
+
+  .acc-s p { font-size: 13px; }
+  .account-image { height: 40px; width: 40px; }
+}
+.humb-image {
+    display: none;
+}
+@media (max-width: 3000px) {
+  .humb-image {
+    display: block;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .navbar { padding: 0 12px; }
+  .logo-image { height: 38px; }
+  .acc-s p { display: none; } /* hide text on tiny screens */
+  .login-btn, .logout-btn { padding: 6px 8px; font-size: 13px; }
+}

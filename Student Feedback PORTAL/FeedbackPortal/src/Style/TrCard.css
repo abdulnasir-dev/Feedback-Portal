@@ -1,0 +1,42 @@
+
+/* Account card */
+
+
+.account-image {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.acc-s p {
+    margin: 0;
+    color: #d4d2d2;
+    font-size: 14px;
+    font-weight: 500;
+}
+.tr-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.acc {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.acc {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction:row;
+    justify-content: center;
+    margin-bottom: 40px;
+    cursor: pointer;
+}

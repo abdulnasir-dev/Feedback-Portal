@@ -1,0 +1,40 @@
+.response-page {
+  min-height: 100vh;
+    background: linear-gradient(135deg, #370941, #1b263b); /* cool gradient background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.response-box {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  color: white;
+  width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.response-box h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  text-align: center;
+}
+
+.response-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+}
+
+.response-item h4 {
+  margin: 0 0 5px 0;
+  color: #ffbde9;
+}
+
+.response-item p {
+  color: #eaeaea;
+}
