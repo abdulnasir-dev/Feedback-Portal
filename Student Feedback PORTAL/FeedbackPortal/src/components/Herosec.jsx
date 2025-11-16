@@ -19,21 +19,23 @@ export default function Herosec({ name }) {
   const [courses, setCourses] = useState([]);
   const navigate = useNavigate();
 
-  // Fetch courses from backend
+  // Fetch courses/events from backend
   useEffect(() => {
     const loadCourses = async () => {
       try {
         const res = await api.get("/courses");
-        setCourses(res.data.courses);
+
+        // FIXED: backend returns array, not { courses: [] }
+        setCourses(res.data);
       } catch (err) {
-        console.log("Error loading courses", err);
+        console.log("Error loading courses:", err);
       }
     };
 
     loadCourses();
   }, []);
 
-  // 🚀 Navigate to Feedback Page
+  // Navigate to Feedback Page
   const openFeedback = (courseId) => {
     navigate(`/feedback/${courseId}`);
   };
@@ -44,8 +46,12 @@ export default function Herosec({ name }) {
       <div className="welcome-hero">
         <div className="hero-overlay">
           <p className="hp1">{formattedDate}</p>
-          <h1 >Welcome back!<span className="uname"> {name}</span> 👋</h1>
-          <p className="hp22">Stay updated with your courses and upcoming events</p>
+          <h1>
+            Welcome back!<span className="uname"> {name}</span> 👋
+          </h1>
+          <p className="hp22">
+            Stay updated with your courses and upcoming events
+          </p>
         </div>
       </div>
 
@@ -74,7 +80,7 @@ export default function Herosec({ name }) {
             <h2>🎉 Events ››</h2>
             <div className="course-cards">
               {courses
-                .filter((c) => c.type === "event")
+                .filter((e) => e.type === "event")
                 .map((e) => (
                   <Card
                     key={e._id}
