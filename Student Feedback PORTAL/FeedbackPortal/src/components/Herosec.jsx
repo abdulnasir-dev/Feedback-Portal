@@ -1,9 +1,9 @@
 import "../Style/Herosec.css";
 import Card from "./Card.jsx";
 import TrCard from "./TrCard.jsx";
-import tr1 from "../Assets/tr1.png";
-import tr2 from "../Assets/tr2.webp";
-import tr3 from "../Assets/tr3.png";
+import tr1 from "../assets/tr1.png";
+import tr2 from "../assets/tr2.webp";
+import tr3 from "../assets/tr3.png";
 import api from "../api/api.js";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
