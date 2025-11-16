@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Herosec({ name }) {
+  console.log("🚀 DEPLOYED API URL =", import.meta.env.VITE_API_URL);
   const today = new Date();
   const formattedDate = today.toLocaleDateString("en-GB", {
     day: "numeric",
