@@ -2,12 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Herosec from "./components/Herosec";
-import Login from "./Pages/Login";
-import Signup from "./Pages/Signup";
-import Account from "./Pages/Account";
-import About from "./Pages/About";
-import Response from "./Pages/Response";
-import Feedback from "./Pages/Feedback";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Account from "./pages/Account";
+import About from "./pages/About";
+import Response from "./pages/Response";
+import Feedback from "./pages/Feedback";
 import "./App.css";
 
 export default function App() {
