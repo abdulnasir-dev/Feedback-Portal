@@ -13,9 +13,13 @@ const app = express();
 // Connect to MongoDB
 connectDB();
 
-// =============== FIXED CORS (IMPORTANT) ===============
+// =================== FIXED CORS ===================
 app.use(cors({
-  origin: "http://localhost:5173",   // React frontend
+  origin: [
+    "https://feedback-portal-alpha.vercel.app",   // Frontend (Vercel)
+    "http://localhost:5173"                       // Local development
+  ],
+  methods: "GET,POST,PUT,DELETE,PATCH",
   credentials: true
 }));
 
